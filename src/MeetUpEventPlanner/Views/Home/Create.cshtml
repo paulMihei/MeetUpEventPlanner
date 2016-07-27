@@ -1,0 +1,54 @@
+﻿@model MeetUpEvent
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h1>Create</h1>
+
+@using (Html.BeginForm())
+{
+    <div class="input-group">
+        @Html.LabelFor(m => m.Name)
+        @Html.EditorFor(m => m.Name)
+        @Html.ValidationMessageFor(m => m.Name)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Type)
+        @Html.EditorFor(m => m.Type)
+        @Html.ValidationMessageFor(m => m.Type)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Host)
+        @Html.EditorFor(m => m.Host)
+        @Html.ValidationMessageFor(m => m.Host)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.StartDateAndTime)
+        @Html.EditorFor(m => m.StartDateAndTime)
+        @Html.ValidationMessageFor(m => m.StartDateAndTime)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.EndDateAndTime)
+        @Html.EditorFor(m => m.EndDateAndTime)
+        @Html.ValidationMessageFor(m => m.EndDateAndTime)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.GuestList)
+        @Html.EditorFor(m => m.GuestList)
+        @Html.ValidationMessageFor(m => m.GuestList)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Location)
+        @Html.EditorFor(m => m.Location)
+        @Html.ValidationMessageFor(m => m.Location)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Message)
+        @Html.EditorFor(m => m.Message)
+        @Html.ValidationMessageFor(m => m.Message)
+    </div>
+    <div>
+        <input type="submit" value="Save" class="btn btn-success"/>
+    </div>
+}

@@ -1,0 +1,54 @@
+﻿@using System.Security.Claims
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="/node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/style/stylesheet.css" rel="stylesheet" />
+</head>
+<body>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index" style="color:#c02f1d;font-weight:bold;">MEET UP EVENT PLANNER</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a asp-controller="Home" asp-action="Create" class="custNavLink">Create New Event</a></li>
+                </ul>
+                <div class="navbar navbar-nav navbar-right">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <form method="post" asp-controller="Account" asp-action="Logout"
+                              class="navbar-form">
+                            @User.Identity.Name
+                            <input type="submit" value="Logout" class="btn btn-danger" />
+                        </form>
+                    }
+                    else
+                    {
+                        <a class="btn btn-default btn-xs navbar-btn" asp-controller="Account" asp-action="Login">Login</a>
+                        <a class="btn btn-default btn-xs navbar-btn" asp-controller="Account" asp-action="Register">Register</a>
+                    }
+                </div>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    
+    <main class="container">
+        @RenderBody()
+    </main>
+    <script src="~/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="~/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,39 @@
+﻿@model MeetUpEventPlanner.ViewModels.LoginViewModel
+@{
+    ViewBag.Title = "Login";
+}
+
+<div class="jumbotron">
+    <h1>Login</h1>
+</div>
+
+<form method="post" asp-controller="Account" asp-action="Login" class="form-horizontal"
+      asp-route-returnurl="@Model.ReturnUrl">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div class="form-group">
+        <label asp-for="Username" class="col-sm-2 control-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="Username" class="form-control" />
+            <span asp-validation-for="Username"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Password" class="col-sm-2 control-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="Password" class="form-control" />
+            <span asp-validation-for="Password"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="RememberMe" class="col-sm-2 control-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="RememberMe" />
+            <span asp-validation-for="RememberMe"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <input type="submit" value="Login" class="btn btn-default" />
+        </div>
+    </div>
+</form>

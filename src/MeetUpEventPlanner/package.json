@@ -1,0 +1,10 @@
+{
+	"version": "1.0.0",
+	"name": "meetupeventplanner",
+	"private": true,
+  "devDependencies": {
+    "bootstrap": "^3.3.6",
+    "jquery": "^2.2.4",
+    "jquery-ui-bootstrap": "^1.0.0"
+  }
+}
