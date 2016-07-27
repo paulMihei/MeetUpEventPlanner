@@ -1,0 +1,9 @@
+﻿.custNavLink {
+    color:#107896  !important;
+    text-transform:uppercase;
+    font-weight: bold;
+}
+
+.custNavLink:hover {
+    color:#11a82b !important;
+}
