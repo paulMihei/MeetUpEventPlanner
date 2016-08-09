@@ -243,3 +243,5 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/src/MeetUpEventPlanner/bower_components
+/src/MeetUpEventPlanner/wwwroot/lib

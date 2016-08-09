@@ -53,7 +53,7 @@ namespace MeetUpEventPlanner
             app.UseBrowserLink();
             app.UseDatabaseErrorPage();
             app.UseFileServer();
-            app.UseNodeModules(appEnvironment);
+            //app.UseNodeModules(appEnvironment);
             app.UseIdentity();
             app.UseMvc(routes =>
             {
