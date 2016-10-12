@@ -3,37 +3,65 @@
     ViewBag.Title = "Login";
 }
 
-<div class="jumbotron">
-    <h1>Login</h1>
-</div>
+<div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div class="panel-title">Sign In</div>
+            <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Forgot password?</a></div>
+        </div>
 
-<form method="post" asp-controller="Account" asp-action="Login" class="form-horizontal"
-      asp-route-returnurl="@Model.ReturnUrl">
-    <div asp-validation-summary="ModelOnly"></div>
-    <div class="form-group">
-        <label asp-for="Username" class="col-sm-2 control-label"></label>
-        <div class="col-sm-10">
-            <input asp-for="Username" class="form-control" />
-            <span asp-validation-for="Username"></span>
+        <div style="padding-top:30px" class="panel-body">
+
+            <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+            <form method="post" asp-controller="Account" asp-action="Login" class="form-horizontal"
+                  role="form" asp-route-returnurl="@Model.ReturnUrl">
+
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger col-sm-12"></div>
+
+                <div id="userNameContainer">
+                    <label asp-for="Username" class="control-label"></label>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input asp-for="Username" class="form-control" />
+                        <span asp-validation-for="Username"></span>
+                    </div>
+                </div>
+
+                <div id="passwordContainer">
+                    <label asp-for="Password" class="control-label"></label>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input asp-for="Password" class="form-control" />
+                        <span asp-validation-for="Password"></span>
+                    </div>
+                </div>
+
+                <div id="rememberMeContainer">
+                    <div class="input-group">
+                        <input asp-for="RememberMe"/>
+                        <label asp-for="RememberMe" class="control-label"></label>
+                        <span asp-validation-for="RememberMe"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-12 controls">
+                        <input type="submit" value="Login" class="btn btn-success btn-block" />
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="col-md-12 control">
+                        <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%">
+                            Don't have an account!
+                            <a asp-controller="Account" asp-action="Register">
+                                Sign Up Here
+                            </a>
+                        </div>
+                    </div>
+                </div>  
+            </form>
         </div>
     </div>
-    <div class="form-group">
-        <label asp-for="Password" class="col-sm-2 control-label"></label>
-        <div class="col-sm-10">
-            <input asp-for="Password" class="form-control" />
-            <span asp-validation-for="Password"></span>
-        </div>
-    </div>
-    <div class="form-group">
-        <label asp-for="RememberMe" class="col-sm-2 control-label"></label>
-        <div class="col-sm-10">
-            <input asp-for="RememberMe" />
-            <span asp-validation-for="RememberMe"></span>
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-            <input type="submit" value="Login" class="btn btn-default" />
-        </div>
-    </div>
-</form>
+</div>
