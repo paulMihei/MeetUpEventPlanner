@@ -1,4 +1,8 @@
-﻿.custNavLink {
+﻿body {
+    padding-top: 70px;
+}
+
+.custNavLink {
     color:#107896  !important;
     text-transform:uppercase;
     font-weight: bold;
@@ -7,3 +11,11 @@
 .custNavLink:hover {
     color:#11a82b !important;
 }
+
+.alert.alert-danger:empty {display:none;}
+
+/* Login Style */
+#userNameContainer, #passwordContainer {margin-bottom:20px;}
+#rememberMeContainer {margin-bottom:10px;}
+#RememberMe {margin-right:5px;}
+/* Login Style End */
