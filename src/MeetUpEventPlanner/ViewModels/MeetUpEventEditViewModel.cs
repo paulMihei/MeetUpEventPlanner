@@ -1,10 +1,25 @@
-﻿using System;
+﻿using MeetUpEventPlanner.Entities;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace MeetUpEventPlanner.ViewModels
 {
     public class MeetUpEventEditViewModel
     {
+        public MeetUpEventEditViewModel() { }
+        public MeetUpEventEditViewModel(MeetUpEvent meetUpEvent)
+        {
+            Id = meetUpEvent.Id;
+            Name = meetUpEvent.Name;
+            Type = meetUpEvent.Type;
+            Host = meetUpEvent.Host;
+            StartDateAndTime = meetUpEvent.StartDateAndTime;
+            EndDateAndTime = meetUpEvent.EndDateAndTime;
+            GuestList = meetUpEvent.GuestList;
+            Location = meetUpEvent.Location;
+            Message = meetUpEvent.Message;
+        }
+
         [ScaffoldColumn(true)]
         public int Id { get; set; }
 
@@ -30,6 +45,7 @@ namespace MeetUpEventPlanner.ViewModels
         public string Location { get; set; }
 
         [MaxLength(1000)]
+        [Display(Name = "Message (Optional)")]
         public string Message { get; set; }
     }
 }

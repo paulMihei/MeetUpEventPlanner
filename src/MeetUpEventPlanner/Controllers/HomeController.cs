@@ -57,7 +57,8 @@ namespace MeetUpEventPlanner.ViewModels
         [HttpGet]
         public IActionResult Edit(int id)
         {
-            var model = _meetUpEventData.GetEvent(id);
+            MeetUpEvent meetUpeEvent = _meetUpEventData.GetEvent(id);
+            var model = new MeetUpEventEditViewModel(meetUpeEvent);
 
             if (model == null)
             {
