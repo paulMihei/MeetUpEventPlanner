@@ -1,4 +1,4 @@
-﻿@model MeetUpEvent
+﻿@model MeetUpEventEditViewModel
 
 @{
     ViewBag.Title = "Create";
@@ -8,47 +8,49 @@
 
 @using (Html.BeginForm())
 {
-    <div class="input-group">
-        @Html.LabelFor(m => m.Name)
-        @Html.EditorFor(m => m.Name)
-        @Html.ValidationMessageFor(m => m.Name)
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name"></span>
     </div>
-    <div>
-        @Html.LabelFor(m => m.Type)
-        @Html.EditorFor(m => m.Type)
-        @Html.ValidationMessageFor(m => m.Type)
+    <div class="form-group">
+        <label asp-for="Type"></label>
+        <input asp-for="Type" class="form-control" />
+        <span asp-validation-for="Type"></span>
     </div>
-    <div>
-        @Html.LabelFor(m => m.Host)
-        @Html.EditorFor(m => m.Host)
-        @Html.ValidationMessageFor(m => m.Host)
+    <div class="form-group">
+        <label asp-for="Host"></label>
+        <input asp-for="Host" class="form-control" />
+        <span asp-validation-for="Host"></span>
     </div>
-    <div>
-        @Html.LabelFor(m => m.StartDateAndTime)
-        @Html.EditorFor(m => m.StartDateAndTime)
-        @Html.ValidationMessageFor(m => m.StartDateAndTime)
+    <div class="form-group">
+        <div class="input-group date">
+            <label asp-for="StartDateAndTime"></label>
+            <input asp-for="StartDateAndTime" class="form-control" />
+            <span asp-validation-for="StartDateAndTime"></span>
+        </div>
     </div>
-    <div>
-        @Html.LabelFor(m => m.EndDateAndTime)
-        @Html.EditorFor(m => m.EndDateAndTime)
-        @Html.ValidationMessageFor(m => m.EndDateAndTime)
+    <div class="form-group">
+        <label asp-for="EndDateAndTime"></label>
+        <input asp-for="EndDateAndTime" class="form-control" />
+        <span asp-validation-for="EndDateAndTime"></span>
     </div>
-    <div>
-        @Html.LabelFor(m => m.GuestList)
-        @Html.EditorFor(m => m.GuestList)
-        @Html.ValidationMessageFor(m => m.GuestList)
+    <div class="form-group">
+        <label asp-for="GuestList"></label>
+        <input asp-for="GuestList" class="form-control" />
+        <span asp-validation-for="GuestList"></span>
     </div>
-    <div>
-        @Html.LabelFor(m => m.Location)
-        @Html.EditorFor(m => m.Location)
-        @Html.ValidationMessageFor(m => m.Location)
+    <div class="form-group">
+        <label asp-for="Location"></label>
+        <input asp-for="Location" class="form-control" />
+        <span asp-validation-for="Location"></span>
     </div>
-    <div>
-        @Html.LabelFor(m => m.Message)
-        @Html.EditorFor(m => m.Message)
-        @Html.ValidationMessageFor(m => m.Message)
+    <div class="form-group">
+        <label asp-for="Message"></label>
+        <input asp-for="Message" class="form-control" />
+        <span asp-validation-for="Message"></span>
     </div>
-    <div>
-        <input type="submit" value="Save" class="btn btn-success"/>
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-primary" />
     </div>
 }
