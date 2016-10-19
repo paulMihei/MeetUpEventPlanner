@@ -14,6 +14,8 @@
 
 .alert.alert-danger:empty {display:none;}
 
+.required:after { content:" *"; color:red;}
+
 /* Login Style */
 #userNameContainer, #passwordContainer {margin-bottom:20px;}
 #rememberMeContainer {margin-bottom:10px;}

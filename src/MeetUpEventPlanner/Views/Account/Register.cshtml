@@ -3,25 +3,52 @@
     ViewBag.Title = "Register";
 }
 
-<h1>Register</h1>
-<form method="post" asp-controller="Account" asp-action="Register">
-    <div asp-validation-summary="ModelOnly"></div>
-    <div>
-        <label asp-for="Username"></label>
-        <input asp-for="Username" />
-        <span asp-validation-for="Username"></span>
+<div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div class="panel-title">Sign Up</div>
+        </div>
+        <!--TODO: style validation-->
+        <div style="padding-top:30px" class="panel-body">
+
+            <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+            <form method="post" asp-controller="Account" asp-action="Register" class="form-horizontal"
+                  role="form">
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger col-sm-12"></div>
+                <div id="userNameContainer">
+                    <label asp-for="Username" class="control-label required"></label>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input asp-for="Username" class="form-control" />
+                    </div>
+                        <span asp-validation-for="Username"></span>
+                </div>
+
+                <div id="passwordContainer">
+                    <label asp-for="Password" class="control-label required"></label>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input asp-for="Password" class="form-control" />
+                    </div>
+                        <span asp-validation-for="Password"></span>
+                </div>
+
+                <div id="passwordContainer">
+                    <label asp-for="ConfirmPassword" class="control-label required"></label>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input asp-for="ConfirmPassword" class="form-control" />
+                    </div>
+                        <span asp-validation-for="ConfirmPassword"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="col-sm-12 controls">
+                        <input type="submit" value="Register" class="btn btn-success btn-block"/>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
-    <div>
-        <label asp-for="Password"></label>
-        <input asp-for="Password" />
-        <span asp-validation-for="Password"></span>
-    </div>
-    <div>
-        <label asp-for="ConfirmPassword"></label>
-        <input asp-for="ConfirmPassword" />
-        <span asp-validation-for="ConfirmPassword"></span>
-    </div>
-    <div>
-        <input type="submit" value="Register" />
-    </div>
-</form>
+</div>
