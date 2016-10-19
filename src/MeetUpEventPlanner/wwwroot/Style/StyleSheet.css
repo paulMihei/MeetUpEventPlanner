@@ -1,21 +1,38 @@
 ﻿body {
     padding-top: 70px;
+    background-color: #FFFFFF;
 }
 
+#mainNavbar {
+    background-color: #fff;
+}
+
+#logoLink {padding:0; padding-left:5px; outline: none;}
+
 .custNavLink {
-    color:#107896  !important;
-    text-transform:uppercase;
+    color: #107896 !important;
+    text-transform: uppercase;
     font-weight: bold;
 }
 
-.custNavLink:hover {
-    color:#11a82b !important;
+    .custNavLink:hover {
+        color: #11a82b !important;
+    }
+
+.alert.alert-danger:empty {
+    display: none;
 }
 
-.alert.alert-danger:empty {display:none;}
-
 /* Login Style */
-#userNameContainer, #passwordContainer {margin-bottom:20px;}
-#rememberMeContainer {margin-bottom:10px;}
-#RememberMe {margin-right:5px;}
+#userNameContainer, #passwordContainer {
+    margin-bottom: 20px;
+}
+
+#rememberMeContainer {
+    margin-bottom: 10px;
+}
+
+#RememberMe {
+    margin-right: 5px;
+}
 /* Login Style End */
