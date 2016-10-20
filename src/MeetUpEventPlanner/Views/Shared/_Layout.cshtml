@@ -8,7 +8,7 @@
     <link href="~/style/stylesheet.css" rel="stylesheet" />
 </head>
 <body>
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <nav id="mainNavbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -18,19 +18,18 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" asp-controller="Home" asp-action="Index" style="color:#c02f1d;font-weight:bold;">MEET UP EVENT PLANNER</a>
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index" id="logoLink">
+                    <img src="~/images/logo.png" />
+                </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a asp-controller="Home" asp-action="Create" class="custNavLink">Create New Event</a></li>
-                </ul>
                 <div class="navbar navbar-nav navbar-right">
                     @if (User.Identity.IsAuthenticated)
                     {
                         <form method="post" asp-controller="Account" asp-action="Logout"
                               class="navbar-form">
-                            @User.Identity.Name
+                            Hi, @User.Identity.Name
                             <input type="submit" value="Logout" class="btn btn-danger" />
                         </form>
                     }
@@ -43,7 +42,7 @@
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
-    
+
     <main class="container" id="mainContainer">
         @RenderBody()
     </main>
