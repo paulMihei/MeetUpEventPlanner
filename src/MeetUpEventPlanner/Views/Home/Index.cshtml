@@ -1,11 +1,11 @@
 ﻿@model MeetUpEventPlanner.ViewModels.HomePageViewModel
-@{ 
+@{
     ViewBag.Title = "Home";
 }
 
-<h1>Events List <a class="btn btn-success" asp-action="Create">Add Event</a></h1>
+<div class="page-header"><h1>Events List</h1></div>
 
-@foreach(var meetUpEvent in Model.MeetUpEvents)
+@foreach (var meetUpEvent in Model.MeetUpEvents)
 {
     @Html.Partial("_Summary", meetUpEvent)
 }
