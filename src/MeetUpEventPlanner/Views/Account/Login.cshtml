@@ -23,8 +23,8 @@
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                         <input asp-for="Username" class="form-control" />
-                        <span asp-validation-for="Username"></span>
                     </div>
+                    <span asp-validation-for="Username"></span>
                 </div>
 
                 <div id="passwordContainer">
@@ -32,8 +32,8 @@
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                         <input asp-for="Password" class="form-control" />
-                        <span asp-validation-for="Password"></span>
                     </div>
+                    <span asp-validation-for="Password"></span>
                 </div>
 
                 <div id="rememberMeContainer">
@@ -49,7 +49,6 @@
                         <input type="submit" value="Login" class="btn btn-success btn-block" />
                     </div>
                 </div>
-
 
                 <div class="form-group">
                     <div class="col-md-12 control">

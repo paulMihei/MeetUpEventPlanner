@@ -18,6 +18,10 @@
     margin-left: 50px;
 }
 
+#hang li {
+    padding-top: 5px;
+}
+
 
 .custNavLink {
     color: #107896 !important;
@@ -48,8 +52,8 @@
 
 
 /* Login Style */
-#userNameContainer, #passwordContainer {
-    margin-bottom: 20px;
+#userNameContainer, #emailNameContainer, #passwordContainer {
+    margin-bottom: 10px;
 }
 
 #rememberMeContainer {

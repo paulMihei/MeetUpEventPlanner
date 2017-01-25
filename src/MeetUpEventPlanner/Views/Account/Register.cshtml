@@ -24,6 +24,15 @@
                         <span asp-validation-for="Username"></span>
                 </div>
 
+                <div id="emailNameContainer">
+                    <label asp-for="Email" class="control-label required"></label>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                        <input asp-for="Email" class="form-control" />
+                    </div>
+                    <span asp-validation-for="Email"></span>
+                </div>
+
                 <div id="passwordContainer">
                     <label asp-for="Password" class="control-label required"></label>
                     <div class="input-group">

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace MeetUpEventPlanner.ViewModels
 {
@@ -13,5 +14,14 @@ namespace MeetUpEventPlanner.ViewModels
         [Display(Name = "Confirm Password")]
         [DataType(DataType.Password), Compare(nameof(RegisterViewModel.Password))]
         public string ConfirmPassword { get; set; }
+
+        [DataType(DataType.EmailAddress)]
+        public string Email { get; set; }
+
+        [DataType(DataType.DateTime)]
+        public DateTime BirthDate { get; set; }
+
+        [MaxLength(50)]
+        public string Job { get; set; }
     }
 }
