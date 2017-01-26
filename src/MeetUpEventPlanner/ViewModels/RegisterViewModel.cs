@@ -15,10 +15,11 @@ namespace MeetUpEventPlanner.ViewModels
         [DataType(DataType.Password), Compare(nameof(RegisterViewModel.Password))]
         public string ConfirmPassword { get; set; }
 
-        [DataType(DataType.EmailAddress)]
+        [Required, DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
-        [DataType(DataType.DateTime)]
+        [DataType(DataType.Date)]
+        [Display(Name = "Birth Date")]
         public DateTime BirthDate { get; set; }
 
         [MaxLength(50)]

@@ -26,18 +26,21 @@ namespace MeetUpEventPlanner.ViewModels
         [Required, MaxLength(150)]
         public string Name { get; set; }
 
-        [Required, MaxLength(200)]
+        [Required, MaxLength(100)]
         public string Type { get; set; }
 
         [Required, MaxLength(100)]
         public string Host { get; set; }
 
-        [Required, DataType(DataType.Date)]
+        [Display(Name = "Start Date And Time")]
+        [Required, DataType(DataType.DateTime)]
         public DateTime StartDateAndTime { get; set; }
 
-        [Required, DataType(DataType.Date)]
+        [Display(Name = "End Date And Time")]
+        [Required, DataType(DataType.DateTime)]
         public DateTime EndDateAndTime { get; set; }
 
+        [Display(Name = "Guest List")]
         [Required, MaxLength(500)]
         public string GuestList { get; set; }
 

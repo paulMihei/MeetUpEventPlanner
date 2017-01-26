@@ -8,14 +8,13 @@
         <div class="panel-heading">
             <div class="panel-title">Sign Up</div>
         </div>
-        <!--TODO: style validation-->
+        
         <div style="padding-top:30px" class="panel-body">
-
             <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
             <form method="post" asp-controller="Account" asp-action="Register" class="form-horizontal"
                   role="form">
                 <div asp-validation-summary="ModelOnly" class="alert alert-danger col-sm-12"></div>
-                <div id="userNameContainer">
+                <div class="authField">
                     <label asp-for="Username" class="control-label required"></label>
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -24,7 +23,7 @@
                         <span asp-validation-for="Username"></span>
                 </div>
 
-                <div id="emailNameContainer">
+                <div class="authField">
                     <label asp-for="Email" class="control-label required"></label>
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
@@ -33,7 +32,7 @@
                     <span asp-validation-for="Email"></span>
                 </div>
 
-                <div id="passwordContainer">
+                <div class="authField">
                     <label asp-for="Password" class="control-label required"></label>
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
@@ -42,7 +41,7 @@
                         <span asp-validation-for="Password"></span>
                 </div>
 
-                <div id="passwordContainer">
+                <div class="authField">
                     <label asp-for="ConfirmPassword" class="control-label required"></label>
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
@@ -51,6 +50,14 @@
                         <span asp-validation-for="ConfirmPassword"></span>
                 </div>
 
+                <div class="authField">
+                    <label asp-for="Job" class="control-label"></label>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-wrench"></i></span>
+                        <input asp-for="Job" class="form-control" />
+                    </div>
+                    <span asp-validation-for="Job"></span>
+                </div>
 
                 <div class="form-group">
                     <div class="col-sm-12 controls">

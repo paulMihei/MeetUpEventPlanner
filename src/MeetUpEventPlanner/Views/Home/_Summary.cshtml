@@ -2,9 +2,11 @@
 
 <div class="col-sm-4">
     <section class="panel panel-default">
-        <div class="panel-heading">@Model.Name</div>
+        <div class="panel-heading panelHeadingOdd">@Model.Name</div>
         <div class="panel-body">
-            Location: @Model.Location
+            <span class="infoDescription">Location:</span> <a href="http://maps.google.com/?q=@Model.Location" target="_blank">@Model.Location</a><br />
+            <span class="infoDescription">Start Date and Time:</span> @Model.StartDateAndTime <br />
+            <span class="infoDescription">End Date and Time:</span> @Model.EndDateAndTime <br />
             <div>
                 <a class="btn btn-default" asp-action="Details" asp-route-id="@Model.Id">Details</a>
                 <a class="btn btn-default" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>

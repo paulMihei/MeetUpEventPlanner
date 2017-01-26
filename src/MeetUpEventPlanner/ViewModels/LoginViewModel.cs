@@ -4,7 +4,7 @@ namespace MeetUpEventPlanner.ViewModels
 {
     public class LoginViewModel
     {
-        [Required]
+        [Required, MaxLength(256)]
         public string Username { get; set; }
 
         [Required, DataType(DataType.Password)]

@@ -36,22 +36,18 @@ namespace MeetUpEventPlanner.ViewModels
         {
             if (ModelState.IsValid)
             {
-                MeetUpEvent meetUpEvent = null;
-                for (int i = 0; i < 30; i++)
-                {
-                    meetUpEvent = new MeetUpEvent();
-                    meetUpEvent.GuestList = model.GuestList;
-                    meetUpEvent.Host = model.Host;
-                    meetUpEvent.Location = model.Location;
-                    meetUpEvent.Message = model.Message;
-                    meetUpEvent.Name = model.Name + "_" + i.ToString();
-                    meetUpEvent.StartDateAndTime = model.StartDateAndTime.AddDays(i);
-                    meetUpEvent.EndDateAndTime = model.EndDateAndTime.AddDays(i);
-                    meetUpEvent.Type = model.Type + "_" + i.ToString();
+                var meetUpEvent = new MeetUpEvent();
+                meetUpEvent.GuestList = model.GuestList;
+                meetUpEvent.Host = model.Host;
+                meetUpEvent.Location = model.Location;
+                meetUpEvent.Message = model.Message;
+                meetUpEvent.Name = model.Name;
+                meetUpEvent.StartDateAndTime = model.StartDateAndTime;
+                meetUpEvent.EndDateAndTime = model.EndDateAndTime;
+                meetUpEvent.Type = model.Type;
 
-                    _meetUpEventData.Add(meetUpEvent);
-                    _meetUpEventData.Commit();
-                }
+                _meetUpEventData.Add(meetUpEvent);
+                _meetUpEventData.Commit();
 
                 return RedirectToAction("Details", new { id = meetUpEvent.Id });
             }
@@ -91,7 +87,7 @@ namespace MeetUpEventPlanner.ViewModels
 
                 return RedirectToAction("Details", new { id = meetUpEvent.Id });
             }
-            return View();
+            return View(input);
         }
 
         public IActionResult Details(int id)

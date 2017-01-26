@@ -44,6 +44,7 @@ namespace MeetUpEventPlanner.ViewModels
                 }
 
             }
+            ModelState.AddModelError("", "Invalid Registration attempt");
             return View();
         }
 

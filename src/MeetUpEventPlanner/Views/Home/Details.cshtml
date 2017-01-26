@@ -4,15 +4,41 @@
     ViewBag.Title = Model.Name;
 }
 
-<h1>@Model.Name</h1>
-<div>Id: @Model.Id</div>
-<div>Cuisine: @Model.Type</div>
-<div>Host: @Model.Host</div>
-<div>Start Date and Time: @Model.StartDateAndTime</div>
-<div>End Date And Time: @Model.EndDateAndTime</div>
-<div>GuestList: @Model.GuestList</div>
-<div>Location: @Model.Location</div>
-<div>Message: @Model.Message</div>
-<div>
-    @Html.ActionLink("Home", "Index")
+<div class="col-sm-12">
+    <section class="panel panel-default">
+        <div class="panel-heading panelHeadingOdd">@Model.Name</div>
+        <div class="panel-body">
+            <div class="container-fluid">
+                <div class="col-md-6"><p><span class="infoDescription">Type:</span> @Model.Type</p></div>
+                <div class="col-md-6">
+                    <p><span class="infoDescription">Host:</span> @Model.Host</p>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="col-sm-6">
+                    <p><span class="infoDescription">Start Date and Time:</span> @Model.StartDateAndTime</p>
+                </div>
+                <div class="col-sm-6">
+                    <p><span class="infoDescription">End Date And Time:</span> @Model.EndDateAndTime</p>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="col-md-6">
+                    <p><span class="infoDescription">Guest List:</span> @Model.GuestList</p>
+                </div>
+                <div class="col-md-6">
+                    <p><span class="infoDescription">Location:</span> <a href="http://maps.google.com/?q=@Model.Location" target="_blank">@Model.Location</a></p>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="col-md-12">
+                    <p><span class="infoDescription">Message:</span> @Model.Message</p>
+                </div>
+                <div class="col-md-12">
+                    <a class="btn btn-default" asp-action="Index">Go Back to List</a>
+                    <a class="btn btn-default" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>

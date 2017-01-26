@@ -24,23 +24,24 @@
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav" id="hang">
+                <ul class="nav navbar-nav" id="navOnLeft">
                     <li><a asp-controller="Home" asp-action="Create" class="custNavLink">Create New Event</a></li>
                 </ul>
-                <div class="navbar navbar-nav navbar-right">
-                    @if (User.Identity.IsAuthenticated)
-                    {
-                        <form method="post" asp-controller="Account" asp-action="Logout"
-                              class="navbar-form">
+                <ul class="nav navbar-nav navbar-right" id="navOnRight">
+                    <li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                        <form method="post" asp-controller="Account" asp-action="Logout">
                             Hi, @User.Identity.Name
                             <input type="submit" value="Logout" class="btn btn-danger" />
                         </form>
-                    }
-                    else
-                    {
-                        <a class="btn btn-primary btn-xs navbar-btn" asp-controller="Account" asp-action="Login">Sign In</a>
-                    }
-                </div>
+                        }
+                        else
+                        {
+                        <a class="custNavLink" asp-controller="Account" asp-action="Login">Sign In</a>
+                        }
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
@@ -50,6 +51,10 @@
     </main>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    @if (IsSectionDefined("LocationAPI"))
+    {
+        @RenderSection("LocationAPI");
+    }
 </body>
 </html>
 

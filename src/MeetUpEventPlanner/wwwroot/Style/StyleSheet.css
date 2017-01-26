@@ -2,6 +2,7 @@
     padding-top: 70px;
     background-color: #FFFFFF;
     height: 100%;
+    font-family:Calibri,"Times New Roman","Arial Narrow";
 }
 
 #mainNavbar {
@@ -14,13 +15,19 @@
     outline: none;
 }
 
-#hang {
+#navOnLeft {
     margin-left: 50px;
+    font-size: 1.5em;
 }
 
-#hang li {
-    padding-top: 5px;
+#navOnRight {
+    margin-left: 2px;
+    margin-right: 2px;
 }
+
+    #navOnLeft li, #navOnRight li {
+        padding-top: 5px;
+    }
 
 
 .custNavLink {
@@ -32,6 +39,23 @@
     .custNavLink:hover {
         color: #11a82b !important;
     }
+
+.panelHeadingOdd {
+    background-color: #107896 !important;
+    color: #ffd800 !important;
+}
+
+.panelHeadingEven {
+    background-color: #ffd800 !important;
+}
+
+.infoDescription {
+    font-weight: 800;
+}
+
+.field-validation-error {
+    color: red;
+}
 
 .alert.alert-danger:empty {
     display: none;
@@ -51,8 +75,8 @@
 }
 
 
-/* Login Style */
-#userNameContainer, #emailNameContainer, #passwordContainer {
+/* Login and Registration Style */
+.authField {
     margin-bottom: 10px;
 }
 
@@ -63,4 +87,4 @@
 #RememberMe {
     margin-right: 5px;
 }
-/* Login Style End */
+/* Login and Registratio Style End */
