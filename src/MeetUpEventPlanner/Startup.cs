@@ -9,6 +9,8 @@ using MeetUpEventPlanner.Services;
 using Microsoft.Extensions.PlatformAbstractions;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Localization;
+using System.Globalization;
 
 namespace MeetUpEventPlanner
 {
@@ -49,11 +51,22 @@ namespace MeetUpEventPlanner
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment appEnvironment)
         {
+
             app.UseDeveloperExceptionPage();
+            var supportedCultures = new[]
+            {
+               new CultureInfo("it-IT"),
+               new CultureInfo("en-US")
+            };
+            app.UseRequestLocalization(new RequestLocalizationOptions
+            {
+                DefaultRequestCulture = new RequestCulture("it-IT"),
+                SupportedCultures = supportedCultures,
+                SupportedUICultures = supportedCultures
+            });
             app.UseBrowserLink();
             app.UseDatabaseErrorPage();
             app.UseFileServer();
-            //app.UseNodeModules(appEnvironment);
             app.UseIdentity();
             app.UseMvc(routes =>
             {
