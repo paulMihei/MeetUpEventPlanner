@@ -2,7 +2,7 @@
     padding-top: 70px;
     background-color: #FFFFFF;
     height: 100%;
-    font-family:Calibri,"Times New Roman","Arial Narrow";
+    font-family: "Helvetica Neue",Calibri,"Times New Roman","Arial Narrow";
 }
 
 #mainNavbar {
@@ -29,6 +29,9 @@
         padding-top: 5px;
     }
 
+    #navOnRight form {
+        padding-top: 7px;
+    }
 
 .custNavLink {
     color: #107896 !important;
@@ -39,6 +42,11 @@
     .custNavLink:hover {
         color: #11a82b !important;
     }
+
+#userGreetings {
+    font-weight: 700;
+    color:  #15e2e2;
+}
 
 .panelHeadingOdd {
     background-color: #107896 !important;
